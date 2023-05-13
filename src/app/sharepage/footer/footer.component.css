@@ -1,0 +1,16 @@
+.footer{
+    overflow: hidden;
+    padding: 20px 10px;
+    position: sticky;
+    top: 100%;
+}
+
+.footer .col-lg-8{
+    position: relative;
+    left: 75px;
+}
+
+.footer .col-lg-8 a{
+    gap: 10px;
+    display: flex;
+}

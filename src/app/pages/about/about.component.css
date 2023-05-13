@@ -1,0 +1,23 @@
+div {
+    position: relative;
+    top: 100px;
+    text-align: center;
+   
+}
+
+.container h4{
+    text-align: center;
+    color: rgb(174, 165, 165);
+}
+
+.container h1{
+    text-align: center;
+}
+
+div .para p{
+    position: relative;
+    top: 72px;
+    left: 1px;
+}
+
+

@@ -1,0 +1,55 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "firstname": "kalpesh",
+      "lastname": "naik",
+      "email": "",
+      "phone": 8755477,
+      "age": 27,
+      "state": "pune",
+      "country": "india",
+      "address": "dbjwje",
+      "tag": "ejhfef",
+      "id": 2
+    },
+    {
+      "firstname": "shrushti",
+      "lastname": "naik",
+      "email": "shrushti@gmail.com",
+      "phone": 9819693203,
+      "age": 24,
+      "state": "maharashtra",
+      "country": "India",
+      "address": "mumbai",
+      "tag": "playing",
+      "id": 3
+    },
+    {
+      "firstname": "shrushti",
+      "lastname": "naik",
+      "email": "shrushti@gmail.com",
+      "phone": 9819693203,
+      "age": 24,
+      "state": "maharashtra",
+      "country": "India",
+      "address": "mumbai",
+      "tag": "playing",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

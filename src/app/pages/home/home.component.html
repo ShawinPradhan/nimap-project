@@ -1,0 +1,67 @@
+
+    <div class="banner">
+        <div class="row" style="position: relative;
+        top: 90px;
+        left: 30px;">
+        <h1><em>I'm looking for..</em></h1>
+    </div>
+    
+    <div class="container-fluid search">
+        <div class="row" style="position: relative; top:100px">
+            <div class="col-lg-9">
+        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Enter a Job Description">
+    <datalist id="datalistOptions">
+      <option value="Angular Devloper">
+      <option value="Software Devloper">
+      <option value="Java Developer">
+      <option value="Full Stack Developer">
+      <option value="UI Developer">
+    </datalist>
+    </div>
+    <div class="col-lg-3">
+        <button type="button" class="btn btn-primary btn-lg"><i class="bi bi-search"></i>Search</button>
+    
+    </div>
+    </div>
+    
+    <div class="row" style="position: relative; top:150px">
+        <div class="col-lg-6" style="gap:5px">
+         <input type="checkbox" name="checkbox" value="ft"><em> Full Time</em>   <input type="checkbox" name="checkbox" value="pt"><em> Part Time / Casual / Freelance</em>
+        </div>
+        <div class="col-lg-3">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select your location
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Mumbai</a></li>
+                  <li><a class="dropdown-item" href="#">Pune</a></li>
+                  <li><a class="dropdown-item" href="#">Delhi</a></li>
+                </ul>
+              </div>
+    
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        <button class="btn btn-primary" (click)="openpopup()">Register</button>
+    </div>
+    
+    
+    
+    
+    <div class="overlay" *ngIf="show" (click)="closeoverlay($event)">
+        <div class="content">
+          <div class="close" (click)="closepopup()">
+            &times;
+          </div>
+
+          <div class="container">
+            <app-registration></app-registration>
+        </div>
+
+        </div>
+    </div>
+
+    </div>
+    </div>
