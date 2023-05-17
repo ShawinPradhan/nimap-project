@@ -3,18 +3,19 @@
     <div class="row">
 
         <div class="col-lg-4">
-
+            
         </div>
 
+        <div *ngFor="let user of users">
         <div class="col-lg-8">
-             <!-- <p style="text-size-adjust: 10px;">I'm {{item.firstname}} and Im above yearsand<br>
-            you can send your emails to <br>
-            . I live in the state of<br>.My hobbies are .<br>
-               And please send a newsletters. Please<br> reach out to me on my phone number  </p>  . -->
+             <p style="text-size-adjust: 10px;">I'm {{user.firstName}} and I'm above {{user.age}} years and<br>
+            you can send your emails to {{user.email}}<br>
+            . I live in the state of {{user.state}}<br>.My hobbies are .<br>
+               And please send a newsletters. Please<br> reach out to me on my phone number {{user.phone}}</p>  .
         
           
-           <button style="background-color: green; color: white;">I Agree</button>
+           <button class="btn btn-success ">I Agree</button>
         </div>
-
+        </div>
     </div>
 </div>

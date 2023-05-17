@@ -7,14 +7,14 @@
     <div class="row">
         <div class="col-lg-3">
           
-          <img src="../../../assets/blank-profile-picture-gf2f84182f_1280.png" height="200">
-          <input type="file" class="btn" (change)="selectFiles($event)">
+          <img src="../../../assets/blank-profile-picture-gf2f84182f_1280.png" height="120" width="120">
+          <input type="file" class="btn" size="60" (change)="selectFiles($event)">
         </div>
         <div class="col-lg-9">
 
             <div class="row">
-                <div class="col-lg-8 mb-3">
-                    <input type="text" class="form-control" id="firstname" placeholder="First Name" formControlName="firstname">
+                <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control" id="firstname" placeholder="First Name" formControlName="firstname"  [(ngModel)]="user.firstName">
                     <div class="form-text text-danger" *ngIf="FirstName.errors?.['required'] && (FirstName.touched || FirstName.dirty)">
                         First Name is Required
                     </div>
@@ -25,27 +25,36 @@
                         Alphabets Only
                     </div>
                 </div>
-                <div class="col-lg-4 mb-3">
-                    <input type="text" class="form-control" id="lastname" placeholder="Last Name" formControlName="lastname">
+                <div class="col-md-6 mb-3">
+                    <input type="text" class="form-control" id="lastname" placeholder="Last Name" formControlName="lastname"  [(ngModel)]="user.lastName">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col mb-3">
-                    <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+                    <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email"  [(ngModel)]="user.email">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col mb-3">
-                    <input type="number" class="form-control" id="phone" placeholder="(541)-754-3010" formControlName="phone">
+                    <input type="tel" class="form-control" id="phone" placeholder="(541)-754-3010" formControlName="phone"  [(ngModel)]="user.phone">
+                    <div class="form-text text-danger" *ngIf="Phone.errors?.['maxlength'] && (Phone.touched || Phone.dirty)">
+                        Phone exceeds 10
+                    </div>
+                    <div class="form-text text-danger" *ngIf="Phone.errors?.['minlength'] && (Phone.touched || Phone.dirty)">
+                        Phone less than 10 digits
+                    </div>
+                    <div class="form-text text-danger" *ngIf="Phone.errors?.['pattern'] && (Phone.touched || Phone.dirty)">
+                        Digits Only
+                    </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col mb-3">
-                    <p>Age: </p><mat-slider  min="20" max="60" color="lightgray" discrete="true" >
-                        <input matSliderThumb id="age" formControlName="age">
+                    <p>Age: </p><mat-slider  min="20" max="60" color="lightgray" discrete="true" style="width:450px">
+                        <input matSliderThumb id="age" formControlName="age"  [(ngModel)]="user.age">
                     </mat-slider>
                     
                 </div>
@@ -53,19 +62,19 @@
 
             <div class="row">
                 <div class="col mb-3">
-                    <input type="text" class="form-control" id="state" placeholder="State" formControlName="state">
+                    <input type="text" class="form-control" id="state" placeholder="State" formControlName="state"  [(ngModel)]="user.state">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col mb-3">
-                    <input type="text" class="form-control" id="country" placeholder="Country" formControlName="country">
+                    <input type="text" class="form-control" id="country" placeholder="Country" formControlName="country"  [(ngModel)]="user.country">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col mb-3">
-                    <input type="text" class="form-control" id="address" placeholder="Address" formControlName="address">
+                    <input type="text" class="form-control" id="address" placeholder="Address" formControlName="address"  [(ngModel)]="user.address">
                 </div>
             </div>
 

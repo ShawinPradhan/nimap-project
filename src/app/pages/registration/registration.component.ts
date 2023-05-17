@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { UserdataService } from '../../services/userdata.service';
+import { User } from 'src/app/user';
 
 //  @Injectable({
 //    providedIn : 'root'
@@ -17,7 +18,7 @@ import { UserdataService } from '../../services/userdata.service';
 export class RegistrationComponent implements OnInit {
 
 
-  
+  user: User = new User();
 
  
 
@@ -54,10 +55,10 @@ ngOnInit(): void {
 }
   
   registerForm = new FormGroup({
-    firstname: new FormControl("", [Validators.required, Validators.maxLength(20), Validators.pattern('[a-zA-z ]*')]),
+    firstname: new FormControl("", [Validators.required, Validators.maxLength(20), Validators.pattern('[a-zA-Z]*')]),
     lastname: new FormControl(""),
     email: new FormControl(""),
-    phone: new FormControl(""),
+    phone: new FormControl("", [Validators.maxLength(10),Validators.minLength(10), Validators.pattern('[6789]{1}[0-9]{9}')]),
     age: new FormControl(""),
     state: new FormControl(""),
     country: new FormControl(""),
@@ -87,12 +88,13 @@ ngOnInit(): void {
     //   console.warn(this.registerForm.value);
     // }
   
-    constructor(private http:HttpClient){}
+    constructor(private http:HttpClient, private router:Router){}
   
      registerSubmited(){
        this.http.post('http://localhost:3000/posts', this.registerForm.value)
     .subscribe((result)=>{
-      console.warn("result",result)
+      console.warn("result",result);
+      this.router.navigate(['display']);
    })
    console.warn(this.registerForm.value);
 
@@ -104,4 +106,12 @@ ngOnInit(): void {
   get FirstName(): FormControl{
     return this.registerForm.get("firstname") as FormControl;
   }
+
+  get Phone(): FormControl{
+    return this.registerForm.get("phone") as FormControl;
+  }
+
+
+
+
 }
